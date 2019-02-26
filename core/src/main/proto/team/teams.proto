@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+
+package io.github.diegofrsilva.team;
+
+service TeamService {
+    rpc getTeams (google.protobuf.Empty) returns (stream TeamData) {
+    }
+}
+
+message TeamData {
+    string name = 1;
+    string logoUrl = 2;
+}

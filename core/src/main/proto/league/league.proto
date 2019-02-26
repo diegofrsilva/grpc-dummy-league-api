@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "team/teams.proto";
+
+option java_multiple_files = true;
+
+package io.github.diegofrsilva.league;
+
+service StandingsService {
+    rpc getAll (google.protobuf.Empty) returns (stream TeamStandingData) {
+    }
+
+    rpc getByTeamName (StandingsByTeamNamePayload) returns (TeamStandingData) {
+    }
+}
+
+message StandingsByTeamNamePayload {
+    string name = 1;
+}
+
+message TeamStandingData {
+    io.github.diegofrsilva.team.TeamData team = 1;
+    int32 position = 2;
+    int32 points = 3;
+    int32 games = 4;
+    int32 wins = 5;
+    int32 losses = 6;
+    int32 draws = 7;
+}

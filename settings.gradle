@@ -1,0 +1,6 @@
+
+include 'core',
+        'server',
+        'client'
+
+rootProject.name = 'grpc-dummy-league-api'

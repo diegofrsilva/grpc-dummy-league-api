@@ -1,0 +1,20 @@
+allprojects {
+
+    repositories {
+        jcenter()
+    }
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.1'
+    }
+}
+
+
+subprojects {
+    version = '1.0'
+}
